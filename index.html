@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Money Calculator - Notes & Coins</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Money Calculator - Notes and Coins</h1>
+        <div class="small">
+          Choose a country, choose Notes/Coins, enter counts, and click
+          Calculate
+        </div>
+      </header>
+
+      <div class="card">
+        <div class="controls">
+          <label>
+            <div class="small">Country</div>
+            <select id="countrySelect" aria-label="Select country"></select>
+          </label>
+
+          <div>
+            <div class="small">Show</div>
+            <div class="seg" role="tablist" aria-label="Choose notes or coins">
+              <button id="showNotes" class="seg-btn" data-mode="notes">
+                Notes
+              </button>
+              <button id="showCoins" class="seg-btn" data-mode="coins">
+                Coins
+              </button>
+              <button id="showBoth" class="seg-btn active" data-mode="both">
+                Both
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="denominations" class="denoms" aria-live="polite"></div>
+
+        <div class="actions">
+          <button class="primary" id="calcBtn">Calculate</button>
+          <button class="ghost" id="clearBtn">Clear</button>
+          <div style="margin-left: auto" class="small" id="noteCountInfo"></div>
+        </div>
+
+        <div class="result" id="resultArea" aria-live="polite" hidden>
+          <div class="total" id="totalDisplay"></div>
+          <div class="breakdown" id="breakdownDisplay"></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 10px" class="small">
+        Countries included: India, United States, United Kingdom, Euro, Japan.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
